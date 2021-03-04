@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이디야 커피 - RWD</title>
     <link rel="stylesheet" href="./css/stylesheet.css">
+    <script src="./js/helper.js" defer></script>
+    <script src="./js/index.js" defer></script>
 </head>
 <body>
     <div class="app-header" role="banner">
@@ -24,9 +26,36 @@
               aria-label="메뉴 열기">
         <span class="ir"></span>
       </button>
+      <div role="navigation"
+           class="app-navigation">
+        <h2 class="a11y-hidden">메인 메뉴</h2>
+        <ul class="reset-list">
+          <li><a href="#">이디야 추천메뉴</a></li>
+          <li><a href="#">이디야 멤버스</a></li>
+          <li><a href="#">이디야 커피랩</a></li>
+          <li><a href="#">이디야 컬쳐랩</a></li>
+          <li><a href="#">공지사항</a></li>
+          <li><a href="#">매장찾기</a></li>
+        </ul>
+        <button
+                type="button"
+                class="button is-close-menu"
+                title="메뉴 닫기"
+                aria-label="메뉴 닫기">
+          <span
+                class="close"
+                aria-hidden="true">×</span>
+        </button>
+      </div>
       
     </div>
     <div class="app-main" role="main"></div>
-    <div class="app-footer a11y-hidden" role="contentinfo"></div>    
+    <div class="app-footer a11y-hidden" role="contentinfo">
+      <address>
+        <span>서울특별시 강남구 논현로 636 이디야 빌딩(서울특별시 강남구 논현동 221-17)</span>
+        <span>TEL : 02-543-6467</span>
+      </address>
+      <small class="copyright">&copy; 2017 EDIYA COFFEE COMPANY. ALL RIGHTS RESERVED.</small>
+    </div>    
 </body>
 </html>

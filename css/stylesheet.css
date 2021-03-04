@@ -17,22 +17,36 @@ body {
   max-width: 840px;
   min-height: 100vh;
 }
-nav a {
-  color: inherit;
-  text-decoration: none;
-}
 
 a img {
   vertical-align: middle;
 }
+
 /* 공통 클래스 */
 .respons{
   max-width: 100%;
   height: auto;
 }
+.respons-svg{
+  width: 100%;
+  height: auto;
+}
+.button {
+  cursor: pointer;
+  border: none;
+}
+.a11y-hidden {
+  overflow: hidden;
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
 /* 헤더 디자인 */
 .app-header{
-  background-color: yellow;
+  background: rgba(255, 255, 255, 0.4);
   position: fixed;
   left: 0;
   right: 0;
@@ -43,11 +57,81 @@ a img {
 }
 /* 로고 */
 .brand{
-  background-color: pink;
   margin: 0;
-  width: 25.5952380952380930%;
 }
 .brand a {
   display: block;
-  padding: 25px;
+  width: 225px;
+  padding: 15px;
+}
+/* 메인 메뉴 열기 버튼 */
+.is-open-menu {
+  user-select: none;
+  padding: 20px;
+  background: #ffffff;
+  /* transition: all 0.3s ease; */
+}
+
+.is-open-menu .ir {
+  display: block;
+  cursor: pointer;
+  width: 26px;
+  height: 22px;
+  background: url(../images/navigation-button.gif) no-repeat 50%;
+}
+
+/* 메인 메뉴 */
+
+.app-navigation {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+  align-content: flex-start;
+  overflow: hidden;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: hsla(225, 57%, 10%, 0.9);
+  color: #fff;
+  transition: all 0.4s cubic-bezier(0.66, -0.01, 0.3, 0.99);
+  transform: translateX(105vw);
+  backdrop-filter: blur(2px);
+}
+.app-navigation.is-active {
+  transform: translateX(0);
+}
+.app-navigation ul{
+  width: 100%;
+  list-style: none;
+  margin: 0;
+}
+.app-navigation li {
+  border-bottom: 1px solid hsla(225, 57%, 30%, 0.5);
+}
+
+.app-navigation a {
+  display: block;
+  padding: 1em;
+  transition: all 0.4s ease;
+  color: inherit;
+  text-decoration: none;
+}
+
+.app-navigation a:hover,
+.app-navigation a:focus {
+  background: #2e437c;
+}
+.is-close-menu {
+  order: -1;
+  padding: 20px;
+  background: transparent;
+  color: #fff;
+  font-weight: 100;
+  font-size: 40px;
+  line-height: 0.5;
+  transition: all 0.4s ease;
 }
